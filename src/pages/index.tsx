@@ -15,6 +15,7 @@ import { ArrowRight } from "../components/icons/ArrowRight";
 
 function Header() {
   const { siteConfig } = useDocusaurusContext();
+  const STATIC_ROOT = siteConfig.baseUrl;
   const {} = useGlobalData();
   return (
     <header className={styles.header}>
@@ -28,7 +29,7 @@ function Header() {
         </span>{" "}
         Every Developer
       </h1>
-      <img src="/img/banner.png" className={styles.banner} />
+      <img src={STATIC_ROOT + `img/banner.png`} className={styles.banner} />
     </header>
   );
 }
@@ -124,6 +125,9 @@ function Introduction() {
 }
 
 function AboutUs() {
+  const { siteConfig } = useDocusaurusContext();
+  const STATIC_ROOT = siteConfig.baseUrl;
+
   return (
     <ContentContainer
       id="about-us"
@@ -137,7 +141,10 @@ function AboutUs() {
       }
     >
       <div className={styles.aboutUsMain}>
-        <img src="/img/about-us.png" className={styles.aboutUsImg} />
+        <img
+          src={STATIC_ROOT + "img/about-us.png"}
+          className={styles.aboutUsImg}
+        />
         <div className={styles.aboutUsContent}>
           <p className={styles.p}>
             We're Pleisto, a technology company with a vision to "augment human
@@ -189,6 +196,8 @@ function AboutUs() {
 
 function AISolutions() {
   const [activeAnchor, setActiveAnchor] = useState("");
+  const { siteConfig } = useDocusaurusContext();
+  const STATIC_ROOT = siteConfig.baseUrl;
   const items = [
     {
       anchor: "ai-solutions-flappy",
@@ -275,7 +284,7 @@ function AISolutions() {
           control is significantly improved.
         </Translate>
       ),
-      content: <img src="/img/mash-diffusion-prompt.png" />,
+      content: <img src={STATIC_ROOT + "img/mash-diffusion-prompt.png"} />,
     },
     {
       anchor: "ai-solutions-model-customization",
@@ -356,6 +365,8 @@ function CoreMembers() {
 }
 
 function Partners() {
+  const { siteConfig } = useDocusaurusContext();
+  const STATIC_ROOT = siteConfig.baseUrl;
   return (
     <ContentContainer
       id="partners"
@@ -363,12 +374,30 @@ function Partners() {
       title={<Translate>Partners</Translate>}
     >
       <div className={styles.partnersLayout}>
-        <img src="/img/partners/1.png" className={styles.partnerImg} />
-        <img src="/img/partners/2.png" className={styles.partnerImg} />
-        <img src="/img/partners/3.png" className={styles.partnerImg} />
-        <img src="/img/partners/4.png" className={styles.partnerImg} />
-        <img src="/img/partners/5.png" className={styles.partnerImg} />
-        <img src="/img/partners/6.png" className={styles.partnerImg} />
+        <img
+          src={STATIC_ROOT + "img/partners/1.png"}
+          className={styles.partnerImg}
+        />
+        <img
+          src={STATIC_ROOT + "img/partners/2.png"}
+          className={styles.partnerImg}
+        />
+        <img
+          src={STATIC_ROOT + "img/partners/3.png"}
+          className={styles.partnerImg}
+        />
+        <img
+          src={STATIC_ROOT + "img/partners/4.png"}
+          className={styles.partnerImg}
+        />
+        <img
+          src={STATIC_ROOT + "img/partners/5.png"}
+          className={styles.partnerImg}
+        />
+        <img
+          src={STATIC_ROOT + "img/partners/6.png"}
+          className={styles.partnerImg}
+        />
       </div>
     </ContentContainer>
   );
