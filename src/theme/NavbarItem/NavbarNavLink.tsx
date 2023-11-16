@@ -45,6 +45,10 @@ export default function NavbarNavLink({
       />
     );
   }
+
+  const isActive =
+    (typeof window !== "undefined" && window.location.pathname) ??
+    "" + (window.location.hash ?? "") === (activeBasePath ?? "");
   return (
     <Link
       to={toUrl}
@@ -57,9 +61,7 @@ export default function NavbarNavLink({
       })}
       {...props}
       className={`${props.className ?? ""} ${
-        location.pathname + (location.hash ?? "") === (activeBasePath ?? "")
-          ? "navbar__link__active"
-          : ""
+        isActive ? "navbar__link__active" : ""
       }`}
       {...linkContentProps}
     />
