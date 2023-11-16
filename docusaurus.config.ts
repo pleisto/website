@@ -3,20 +3,20 @@ import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
-  title: "My Site",
-  tagline: "Dinosaurs are cool",
+  title: "Pleisto",
+  tagline: "",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: "https://your-docusaurus-site.example.com",
+  url: "https://www.pleisto.com",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "facebook", // Usually your GitHub org/user name.
-  projectName: "docusaurus", // Usually your repo name.
+  organizationName: "pleisto", // Usually your GitHub org/user name.
+  projectName: "website", // Usually your repo name.
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -45,63 +45,55 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
-    image: "img/docusaurus-social-card.jpg",
+    colorMode: {
+      disableSwitch: true,
+    },
     navbar: {
-      title: "My Site",
+      title: "",
+      hideOnScroll: true,
       logo: {
-        alt: "My Site Logo",
+        alt: "Pleisto",
         src: "img/logo.svg",
       },
       items: [
-        { to: "/blog", label: "Blog", position: "left" },
+        {
+          to: "#about-us",
+          label: "About Us",
+          position: "left",
+          activeBasePath: "/#about-us",
+        },
+        {
+          to: "#ai-solutions",
+          label: "AI Solutions",
+          position: "left",
+          activeBasePath: "/#ai-solutions",
+        },
+        {
+          to: "#blogs",
+          label: "Blogs",
+          position: "left",
+          activeBasePath: "/#blogs",
+        },
+        {
+          to: "#core-members",
+          label: "Core Members",
+          position: "left",
+          activeBasePath: "/#core-members",
+        },
+        {
+          to: "#partners",
+          label: "Partner",
+          position: "left",
+          activeBasePath: "/#partners",
+        },
+        { to: "#contact-us", label: "Contact us", position: "left" },
         {
           type: "localeDropdown",
           position: "right",
         },
-        {
-          href: "https://github.com/facebook/docusaurus",
-          label: "GitHub",
-          position: "right",
-        },
       ],
     },
-    footer: {
-      style: "dark",
-      links: [
-        {
-          title: "Community",
-          items: [
-            {
-              label: "Stack Overflow",
-              href: "https://stackoverflow.com/questions/tagged/docusaurus",
-            },
-            {
-              label: "Discord",
-              href: "https://discordapp.com/invite/docusaurus",
-            },
-            {
-              label: "Twitter",
-              href: "https://twitter.com/docusaurus",
-            },
-          ],
-        },
-        {
-          title: "More",
-          items: [
-            {
-              label: "Blog",
-              to: "/blog",
-            },
-            {
-              label: "GitHub",
-              href: "https://github.com/facebook/docusaurus",
-            },
-          ],
-        },
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
-    },
+    footer: {},
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
