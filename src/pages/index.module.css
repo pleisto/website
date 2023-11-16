@@ -113,10 +113,11 @@ span.light {
   line-height: 1.375rem;
   color: rgba(66, 66, 66, 1);
 
-  &.primary {
-    background: rgba(66, 66, 66, 1);
-    color: #fff;
-  }
+}
+
+.btnPrimary {
+  background: rgba(66, 66, 66, 1);
+  color: #fff;
 }
 
 @media screen and (max-width: 996px) {
@@ -206,20 +207,21 @@ span.light {
   padding-top: 1.25rem;
   margin-bottom: var(--landing-page-gap);
 
-  &.l3 {
-    margin-bottom: var(--landing-page-gap-secondary);
+}
+
+.l3 {
+  margin-bottom: var(--landing-page-gap-secondary);
+}
+
+.noPadding {
+  padding: 0;
+
+  .contentContainerHint {
+    padding-left: 0;
   }
 
-  &.noPadding {
-    padding: 0;
-
-    .contentContainerHint {
-      padding-left: 0;
-    }
-
-    .contentContainerDivider {
-      left: 0;
-    }
+  .contentContainerDivider {
+    left: 0;
   }
 }
 

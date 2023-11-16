@@ -414,7 +414,7 @@ function ContactUs() {
         Stay tuned for updates 📢 as we continue to innovate and move forward
         🚀.
       </div>
-      <a className={clsx(styles.button, styles.primary)}>
+      <a className={clsx(styles.button, styles.btnPrimary)}>
         <ArrowRight className={styles.buttonIcon} />
         <Translate>Get Start</Translate>
       </a>
