@@ -53,7 +53,7 @@ const ContentContainer: FC<PropsWithChildren<ContentContainerProps>> = ({
 }) => {
   return (
     <section
-      className={clsx(styles.contentContainer, {
+      className={clsx(styles.contentContainer, styles[`l${level}`], {
         [styles.noPadding]: !padding,
       })}
     >
@@ -66,7 +66,12 @@ const ContentContainer: FC<PropsWithChildren<ContentContainerProps>> = ({
       <div
         className={clsx(styles.contentContainerDivider, styles[`d${level}`])}
       />
-      {title && createElement(`h${level}`, { id, className: styles.h2 }, title)}
+      {title &&
+        createElement(
+          `h${level}`,
+          { id, className: styles[`h${level}`] },
+          title
+        )}
       {description && (
         <p className={clsx(styles.p, styles[`p${level}`])}>{description}</p>
       )}
@@ -204,7 +209,7 @@ function AISolutions() {
             <span>
               <Translate>AI Model Module</Translate>
             </span>
-            <span>
+            <span className={styles.longContentColumn}>
               <Translate>Data-processing Modules</Translate>
             </span>
             <span>
