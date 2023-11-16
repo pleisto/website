@@ -115,7 +115,7 @@ span.light {
 
 }
 
-.btnPrimary {
+.button.primary {
   background: rgba(66, 66, 66, 1);
   color: #fff;
 }
@@ -158,19 +158,19 @@ span.light {
   display: inline-flex;
   flex-direction: row;
   align-items: center;
+}
 
-  >a {
-    text-decoration: none;
-  }
+.tocItem>a {
+  text-decoration: none;
 }
 
 .tocItemActive {
-  >a {
-    color: rgba(66, 66, 66, 1);
-    margin-right: .25rem;
-  }
-
   border-bottom: 1px solid rgba(66, 66, 66, 1);
+}
+
+.tocItemActive>a {
+  color: rgba(66, 66, 66, 1);
+  margin-right: .25rem;
 }
 
 .tocItem+.tocItem {
@@ -209,20 +209,21 @@ span.light {
 
 }
 
-.l3 {
+.contentContainer.l3 {
   margin-bottom: var(--landing-page-gap-secondary);
 }
 
-.noPadding {
+.contentContainer.noPadding {
   padding: 0;
 
-  .contentContainerHint {
-    padding-left: 0;
-  }
+}
 
-  .contentContainerDivider {
-    left: 0;
-  }
+.contentContainer.noPadding>.contentContainerHint {
+  padding-left: 0;
+}
+
+.contentContainer.noPadding>.contentContainerDivider {
+  left: 0;
 }
 
 .contentContainerHint {
