@@ -1,6 +1,9 @@
 import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
+import blogPlugin from "./plugins/blog-plugin";
+
+const baseUrl = "/website";
 
 const config: Config = {
   title: "Pleisto",
@@ -11,7 +14,7 @@ const config: Config = {
   url: "https://pleisto.github.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/website",
+  baseUrl,
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -34,13 +37,20 @@ const config: Config = {
       "classic",
       {
         docs: false,
-        blog: {
-          showReadingTime: true,
-        },
+        blog: false,
         theme: {
           customCss: "./src/css/custom.css",
         },
       } satisfies Preset.Options,
+    ],
+  ],
+
+  plugins: [
+    [
+      blogPlugin,
+      {
+        showReadingTime: false,
+      },
     ],
   ],
 
@@ -60,33 +70,38 @@ const config: Config = {
           to: "#about-us",
           label: "About Us",
           position: "left",
-          activeBasePath: "/#about-us",
+          activeBasePath: baseUrl + "/#about-us",
         },
         {
           to: "#ai-solutions",
           label: "AI Solutions",
           position: "left",
-          activeBasePath: "/#ai-solutions",
+          activeBasePath: baseUrl + "/#ai-solutions",
         },
         {
           to: "#blogs",
           label: "Blogs",
           position: "left",
-          activeBasePath: "/#blogs",
+          activeBasePath: baseUrl + "/#blogs",
         },
         {
           to: "#core-members",
           label: "Core Members",
           position: "left",
-          activeBasePath: "/#core-members",
+          activeBasePath: baseUrl + "/#core-members",
         },
         {
           to: "#partners",
           label: "Partner",
           position: "left",
-          activeBasePath: "/#partners",
+          activeBasePath: baseUrl + "/#partners",
         },
-        { to: "#contact-us", label: "Contact us", position: "left" },
+        {
+          to: "#contact-us",
+          label: "Contact us",
+          position: "left",
+          activeBasePath: baseUrl + "/#contact-us",
+        },
         {
           type: "localeDropdown",
           position: "right",

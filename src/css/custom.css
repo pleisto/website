@@ -191,3 +191,12 @@ html {
 .menu__caret {
   border-radius: 0;
 }
+
+article {
+  color: rgba(146, 146, 146, 1);
+
+}
+
+article h2 a {
+  color: rgba(66, 66, 66, 1);
+}

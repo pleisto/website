@@ -47,8 +47,10 @@ export default function NavbarNavLink({
   }
 
   const isActive =
-    (typeof window !== "undefined" && window.location.pathname) ??
-    "" + (window.location.hash ?? "") === (activeBasePath ?? "");
+    typeof window !== "undefined" &&
+    (window.location.pathname ?? "") + (window.location.hash ?? "") ===
+      (activeBasePath ?? "");
+
   return (
     <Link
       to={toUrl}
