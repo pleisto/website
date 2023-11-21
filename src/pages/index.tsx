@@ -289,7 +289,32 @@ function AISolutions() {
           control is significantly improved.
         </Translate>
       ),
-      content: <img src={STATIC_ROOT + "img/mash-diffusion-prompt.png"} />,
+      content: (
+        <div className={styles.promptImgLayout}>
+          <img
+            className={styles.promptImg}
+            src={STATIC_ROOT + "img/mash-diffusion-prompt.png"}
+          />
+          <div className={styles.promptForm}>
+            <div className={styles.promptLabel}>
+              <Translate>Prompt</Translate>
+            </div>
+            <div className={styles.promptInput}>
+              <Translate>
+                An angel knight in light armor slays a demon with a flaming
+                sword , unreal engine, octane render, realistic, precise
+                features, stunning background, cinematic, vray render, 8k,
+                natural lighting, god light, depth of field, uplight, sharp
+                focus, epic composition, 8k, UHD, natural light, Panorama shot,
+                wide angle lens, photo realistic, maximum texture, HDR
+              </Translate>
+            </div>
+            <div className={styles.promptSubmit}>
+              <Translate>submit</Translate>
+            </div>
+          </div>
+        </div>
+      ),
     },
     {
       anchor: "ai-solutions-model-customization",
