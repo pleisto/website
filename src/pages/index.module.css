@@ -605,7 +605,7 @@ a.blogLink:hover {
 
 .member {
   padding: 1.5rem;
-  border: 1px solid #fff;
+  border: 1px solid transparent;
 }
 
 @media screen and (max-width: 996px) {
