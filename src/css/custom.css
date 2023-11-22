@@ -221,16 +221,12 @@ html {
 }
 
 .navbar__item {
-  overflow: hidden;
-  text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 .navbar__item.dropdown {
   padding: 1rem;
   display: inline-block;
-  overflow: hidden;
-  text-overflow: ellipsis;
   white-space: nowrap;
 }
 

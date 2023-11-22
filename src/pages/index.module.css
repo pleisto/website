@@ -587,7 +587,6 @@ a.blogLink:hover {
   .members {
     grid-template-columns: repeat(2, 1fr);
     gap: unset;
-    row-gap: 1.25rem;
     margin-top: 1.25rem;
   }
 }
@@ -600,7 +599,7 @@ a.blogLink:hover {
 
 @media screen and (max-width: 996px) {
   .memberItem {
-    height: 13.75rem;
+    height: 15rem;
   }
 }
 
@@ -611,7 +610,7 @@ a.blogLink:hover {
 
 @media screen and (max-width: 996px) {
   .member {
-    padding: 1rem;
+    padding: 0.625rem;
   }
 }
 
@@ -698,6 +697,7 @@ a.blogLink:hover {
   font-size: 1.5rem;
   line-height: 2rem;
   color: var(--ifm-color-primary-dark);
+  text-wrap: nowrap;
 }
 
 @media screen and (max-width: 996px) {
