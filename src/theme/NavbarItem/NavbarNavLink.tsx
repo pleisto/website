@@ -47,10 +47,11 @@ export default function NavbarNavLink({
   }
 
   const isActive =
-    typeof window !== "undefined" && activeBaseRegex
+    typeof window !== "undefined" &&
+    (activeBaseRegex
       ? isRegexpStringMatch(activeBaseRegex, window.location.pathname)
       : (window.location.pathname ?? "") + (window.location.hash ?? "") ===
-        (activeBasePath ?? "");
+        (activeBasePath ?? ""));
 
   return (
     <Link

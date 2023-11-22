@@ -15,6 +15,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "../components/icons/ArrowRight";
 import { BlogPost } from "@site/plugins/blog-plugin";
 import { Close } from "../components/icons/Close";
+import Link from "@docusaurus/Link";
 
 function Header() {
   const { siteConfig } = useDocusaurusContext();
@@ -421,19 +422,19 @@ function Blogs() {
             key={blog.id}
           >
             <div className={styles.blogDate}>{blog.metadata.formattedDate}</div>
-            <div className={styles.blogMain}>
+            <a href={blog.metadata.permalink} className={styles.blogMain}>
               <div className={styles.blogTitle}>{blog.metadata.title}</div>
               <div className={styles.blogDescription}>
                 {blog.metadata.description}
               </div>
-              <a className={styles.blogLink} href={blog.metadata.permalink}>
-                <ArrowRight className={styles.blogLinkIcon} />
-                <Translate>Read More</Translate>
-              </a>
-            </div>
+            </a>
           </motion.div>
         ))}
       </div>
+      <Link href="/blog" className={styles.blogLink}>
+        <ArrowRight className={styles.blogLinkIcon} />
+        <Translate>See all Blog Posts</Translate>
+      </Link>
     </ContentContainer>
   );
 }

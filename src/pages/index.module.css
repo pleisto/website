@@ -8,20 +8,6 @@
  * global styles
  */
 
-:root {
-  --landing-page-padding-horizontal: 7.75rem;
-  --landing-page-gap: 3.75rem;
-  --landing-page-gap-secondary: 2.5rem;
-}
-
-@media screen and (max-width: 996px) {
-  :root {
-    --landing-page-padding-horizontal: 1.5rem;
-    --landing-page-gap: 1.875rem;
-    --landing-page-gap-secondary: 1.25rem;
-  }
-}
-
 span.light {
   color: var(--ifm-color-primary);
 }
@@ -31,7 +17,7 @@ span.light {
   font-weight: 300;
   line-height: 6.25rem;
   color: var(--ifm-color-primary-darker);
-  margin: var(--landing-page-gap) 0 2.5rem;
+  margin: var(--page-gap) 0 2.5rem;
 }
 
 @media screen and (max-width: 996px) {
@@ -189,9 +175,9 @@ span.light {
  */
 
 .header {
-  padding: 0 var(--landing-page-padding-horizontal);
+  padding: 0 var(--page-padding-horizontal);
   line-height: 0;
-  margin-bottom: var(--landing-page-gap);
+  margin-bottom: var(--page-gap);
 }
 
 .banner {
@@ -204,14 +190,14 @@ span.light {
 
 .contentContainer {
   position: relative;
-  padding: 0 var(--landing-page-padding-horizontal);
+  padding: 0 var(--page-padding-horizontal);
   padding-top: 1.25rem;
-  margin-bottom: var(--landing-page-gap);
+  margin-bottom: var(--page-gap);
 
 }
 
 .contentContainer.l3 {
-  margin-bottom: var(--landing-page-gap-secondary);
+  margin-bottom: var(--page-gap-secondary);
 }
 
 .contentContainer.noPadding {
@@ -249,7 +235,7 @@ span.light {
 .contentContainerDivider {
   position: absolute;
   top: 0;
-  left: var(--landing-page-padding-horizontal);
+  left: var(--page-padding-horizontal);
   right: 0;
   height: 1px;
 }
@@ -338,7 +324,7 @@ span.light {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  margin-top: var(--landing-page-gap);
+  margin-top: var(--page-gap);
 }
 
 @media screen and (max-width: 996px) {
@@ -486,6 +472,7 @@ span.light {
   grid-template-columns: repeat(2, 1fr);
   gap: 3.125rem;
   margin-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 
 @media screen and (max-width: 996px) {
@@ -516,6 +503,7 @@ span.light {
 }
 
 .blogMain {
+  display: block;
   border-top: 1px solid rgba(189, 189, 189, 1);
 }
 
@@ -552,6 +540,9 @@ span.light {
 }
 
 .blogLink {
+  position: absolute;
+  right: var(--page-padding-horizontal);
+  bottom: 0;
   display: inline-flex;
   flex-direction: row;
   align-items: center;
@@ -812,7 +803,7 @@ a.blogLink:hover {
 .footerLayout {
   display: flex;
   flex-direction: row;
-  padding-right: var(--landing-page-padding-horizontal);
+  padding-right: var(--page-padding-horizontal);
 }
 
 @media screen and (max-width: 996px) {

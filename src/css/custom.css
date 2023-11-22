@@ -33,6 +33,20 @@
   }
 }
 
+:root {
+  --page-padding-horizontal: 7.75rem;
+  --page-gap: 3.75rem;
+  --page-gap-secondary: 2.5rem;
+}
+
+@media screen and (max-width: 996px) {
+  :root {
+    --page-padding-horizontal: 1.5rem;
+    --page-gap: 1.875rem;
+    --page-gap-secondary: 1.25rem;
+  }
+}
+
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 /* [data-theme='dark'] {
   --ifm-color-primary: #25c2a0;
@@ -350,7 +364,7 @@ h5 {
   margin: unset;
   max-width: unset;
   width: unset;
-  padding: var(--ifm-navbar-item-padding-vertical) var(--ifm-navbar-padding-horizontal);
+  padding: 0 var(--page-padding-horizontal);
 }
 
 /**
