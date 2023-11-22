@@ -607,14 +607,14 @@ function MemberCard({ member }: { member: Member }) {
   return (
     <motion.div {...whileInViewAnimation} className={styles.memberItem}>
       <motion.div
-        whileTap={{
-          scale: 1.2,
+        initial={{ scale: 1 }}
+        animate={{
+          scale: active ? 1.2 : 1,
         }}
-        whileHover={{
-          scale: 1.2,
-        }}
+        exit={{ scale: 1 }}
         transition={{ type: "spring", stiffness: 100 }}
         className={clsx(styles.member, { [styles.active]: active })}
+        onPointerDownCapture={(event) => event.stopPropagation()}
         onClick={() => {
           setActive(true);
         }}
@@ -628,7 +628,10 @@ function MemberCard({ member }: { member: Member }) {
         {active && (
           <Close
             className={styles.memberClose}
+            // @ts-ignore
+            onPointerDownCapture={(event) => event.stopPropagation()}
             onClick={(event) => {
+              event.preventDefault();
               event.stopPropagation();
               setActive(false);
             }}

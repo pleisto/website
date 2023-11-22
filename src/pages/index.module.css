@@ -603,9 +603,9 @@ a.blogLink:hover {
 }
 
 .memberItem {
+  position: relative;
   display: flex;
   height: 20.875rem;
-  position: relative;
 }
 
 @media screen and (max-width: 996px) {
@@ -636,12 +636,17 @@ a.blogLink:hover {
 
 @media screen and (max-width: 996px) {
   .member.active {
-    width: 70vw;
+    width: 60vw;
+  }
+
+  .memberItem:nth-child(odd)>.member.active {
+    left: 1rem;
+    right: unset;
   }
 
   .memberItem:nth-child(even)>.member.active {
     left: unset;
-    right: 0;
+    right: 1rem;
   }
 }
 
@@ -752,9 +757,9 @@ a.blogLink:hover {
 .partnersLayout {
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(4, 10.75rem);
+  grid-template-columns: repeat(6, 10.75rem);
   justify-content: space-between;
-  gap: 2.5rem;
+  gap: 2rem;
   margin-top: 2.5rem;
 }
 
