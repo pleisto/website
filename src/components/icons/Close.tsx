@@ -5,10 +5,11 @@ export interface CloseProps {
   onClick?: MouseEventHandler;
 }
 
-export const Close: FC<CloseProps> = ({ className, onClick }) => (
+export const Close: FC<CloseProps> = ({ className, onClick, ...restProps }) => (
   <svg
     className={className}
     onClick={onClick}
+    {...restProps}
     width="1em"
     height="1em"
     viewBox="0 0 30 30"

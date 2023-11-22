@@ -23,14 +23,14 @@
 }
 
 span.light {
-  color: rgba(146, 146, 146, 1);
+  color: var(--ifm-color-primary);
 }
 
 .h1 {
   font-size: 5rem;
   font-weight: 300;
   line-height: 6.25rem;
-  color: rgba(66, 66, 66, 1);
+  color: var(--ifm-color-primary-darker);
   margin: var(--landing-page-gap) 0 2.5rem;
 }
 
@@ -45,7 +45,7 @@ span.light {
   font-weight: 500;
   font-size: 4rem;
   line-height: 5.5rem;
-  color: rgba(66, 66, 66, 1);
+  color: var(--ifm-color-primary-darker);
 }
 
 @media screen and (max-width: 996px) {
@@ -78,7 +78,7 @@ span.light {
   font-weight: 300;
   line-height: 1.5rem;
   margin: 0;
-  color: rgba(66, 66, 66, 1);
+  color: var(--ifm-color-primary-darker);
 
 }
 
@@ -105,19 +105,19 @@ span.light {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(66, 66, 66, 1);
+  border: 1px solid var(--ifm-color-primary-darker);
   padding: 0.4375rem 3.25rem;
   background: transparent;
   cursor: pointer;
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.375rem;
-  color: rgba(66, 66, 66, 1);
+  color: var(--ifm-color-primary-darker);
 
 }
 
 .button.primary {
-  background: rgba(66, 66, 66, 1);
+  background: var(--ifm-color-primary-darker);
   color: #fff;
 }
 
@@ -166,11 +166,11 @@ span.light {
 }
 
 .tocItemActive {
-  border-bottom: 1px solid rgba(66, 66, 66, 1);
+  border-bottom: 1px solid var(--ifm-color-primary-darker);
 }
 
 .tocItemActive>a {
-  color: rgba(66, 66, 66, 1);
+  color: var(--ifm-color-primary-darker);
   margin-right: .25rem;
 }
 
@@ -233,7 +233,7 @@ span.light {
   font-weight: 300;
   line-height: 1.5rem;
   padding-left: 7.5rem;
-  color: rgba(146, 146, 146, 1);
+  color: var(--ifm-color-primary);
 }
 
 .contentContainerHintLine {
@@ -243,7 +243,7 @@ span.light {
   width: 7rem;
   height: 1px;
   transform: translateY(-50%);
-  background-color: rgba(146, 146, 146, 1);
+  background-color: var(--ifm-color-primary);
 }
 
 .contentContainerDivider {
@@ -255,7 +255,7 @@ span.light {
 }
 
 .d2 {
-  background: rgba(66, 66, 66, 1);
+  background: var(--ifm-color-primary-darker);
 }
 
 .d3 {
@@ -270,7 +270,7 @@ span.light {
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  color: rgba(146, 146, 146, 1);
+  color: var(--ifm-color-primary);
   padding: 0.3125rem 0 1.5625rem;
   font-size: 0.875rem;
   font-weight: 400;
@@ -303,7 +303,7 @@ span.light {
   left: 0;
   right: 0;
   height: 1px;
-  background: rgba(224, 224, 224, 1);
+  background: var(--ifm-color-primary-lighter);
 }
 
 
@@ -411,7 +411,7 @@ span.light {
   bottom: 0;
   width: 26.875rem;
   background: #fff;
-  border: 1px solid rgba(146, 146, 146, 1);
+  border: 1px solid var(--ifm-color-primary);
   padding: 1rem;
 }
 
@@ -419,7 +419,7 @@ span.light {
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.375rem;
-  color: rgba(146, 146, 146, 1);
+  color: var(--ifm-color-primary);
   margin-bottom: 0.5rem;
 }
 
@@ -429,12 +429,12 @@ span.light {
   font-size: 0.875rem;
   font-weight: 300;
   line-height: 1.5rem;
-  color: rgba(66, 66, 66, 1);
+  color: var(--ifm-color-primary-darker);
 }
 
 .promptSubmit {
-  border: 1px solid rgba(66, 66, 66, 1);
-  color: rgba(66, 66, 66, 1);
+  border: 1px solid var(--ifm-color-primary-darker);
+  color: var(--ifm-color-primary-darker);
   width: 9.75rem;
   height: 2.25rem;
   display: flex;
@@ -444,7 +444,7 @@ span.light {
   margin-top: 0.75rem;
   font-size: 0.875rem;
   font-weight: 400;
-  color: rgba(66, 66, 66, 1);
+  color: var(--ifm-color-primary-darker);
 }
 
 @media screen and (max-width: 996px) {
@@ -503,7 +503,7 @@ span.light {
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.375rem;
-  color: rgba(146, 146, 146, 1);
+  color: var(--ifm-color-primary);
   margin-bottom: 2.25rem;
 }
 
@@ -524,7 +524,7 @@ span.light {
   font-size: 0.875rem;
   font-weight: 500;
   line-height: 1.375rem;
-  color: rgba(66, 66, 66, 1);
+  color: var(--ifm-color-primary-darker);
 }
 
 @media screen and (max-width: 996px) {
@@ -539,7 +539,7 @@ span.light {
   font-weight: 400;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  color: rgba(146, 146, 146, 1);
+  color: var(--ifm-color-primary);
   margin-bottom: 2.25rem;
 }
 
@@ -555,11 +555,11 @@ span.light {
   display: inline-flex;
   flex-direction: row;
   align-items: center;
-  color: rgba(66, 66, 66, 1);
+  color: var(--ifm-color-primary-darker);
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.375rem;
-  border-bottom: 1px solid rgba(66, 66, 66, 1);
+  border-bottom: 1px solid var(--ifm-color-primary-darker);
 }
 
 a.blogLink:hover {
@@ -631,7 +631,7 @@ a.blogLink:hover {
   top: 0;
   z-index: 99999;
   background: #fff;
-  border: 1px solid rgba(94, 94, 94, 1);
+  border: 1px solid var(--ifm-color-primary-dark);
 }
 
 @media screen and (max-width: 996px) {
@@ -688,7 +688,7 @@ a.blogLink:hover {
   font-weight: 500;
   font-size: 3rem;
   line-height: 4.5rem;
-  color: rgba(66, 66, 66, 1);
+  color: var(--ifm-color-primary-darker);
 }
 
 @media screen and (max-width: 996px) {
@@ -702,7 +702,7 @@ a.blogLink:hover {
   font-weight: 500;
   font-size: 1.5rem;
   line-height: 2rem;
-  color: rgba(94, 94, 94, 1);
+  color: var(--ifm-color-primary-dark);
 }
 
 @media screen and (max-width: 996px) {
@@ -718,7 +718,7 @@ a.blogLink:hover {
   font-weight: 300;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  color: rgba(66, 66, 66, 1);
+  color: var(--ifm-color-primary-darker);
   border-top: 1px solid rgba(189, 189, 189, 1);
 }
 
@@ -731,7 +731,7 @@ a.blogLink:hover {
 }
 
 .memberDetailsOverlay {
-  display: none;
+  /* display: none; */
   position: fixed;
   top: 0;
   left: 0;
@@ -741,9 +741,9 @@ a.blogLink:hover {
   z-index: 999;
 }
 
-.memberDetailsOverlay.visible {
+/* .memberDetailsOverlay.visible {
   display: block;
-}
+} */
 
 /**
  * partners styles
@@ -853,7 +853,7 @@ a.blogLink:hover {
   font-weight: 300;
   font-size: 0.75rem;
   line-height: 1.125rem;
-  color: rgba(66, 66, 66, 1);
+  color: var(--ifm-color-primary-darker);
 }
 
 .footerColumn {
@@ -866,7 +866,7 @@ a.blogLink:hover {
   font-weight: 400;
   font-size: 0.875rem;
   line-height: 1.375rem;
-  color: rgba(66, 66, 66, 1);
+  color: var(--ifm-color-primary-darker);
   margin-bottom: 1.25rem;
 }
 

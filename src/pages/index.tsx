@@ -5,15 +5,13 @@ import styles from "./index.module.css";
 import Translate from "@docusaurus/Translate";
 import useGlobalData from "@docusaurus/useGlobalData";
 import {
-  CSSProperties,
   FC,
   PropsWithChildren,
   ReactNode,
   createElement,
-  useCallback,
-  useEffect,
   useState,
 } from "react";
+import { motion } from "framer-motion";
 import { ArrowRight } from "../components/icons/ArrowRight";
 import { BlogPost } from "@site/plugins/blog-plugin";
 import { Close } from "../components/icons/Close";
@@ -24,7 +22,7 @@ function Header() {
   const {} = useGlobalData();
   return (
     <header className={styles.header}>
-      <h1 className={styles.h1}>
+      <motion.h1 className={styles.h1} {...whileInViewAnimation}>
         Production-Ready{" "}
         <span className={styles.light}>
           AI Agent &
@@ -33,8 +31,12 @@ function Header() {
           <br /> for
         </span>{" "}
         Every Developer
-      </h1>
-      <img src={STATIC_ROOT + `img/banner.png`} className={styles.banner} />
+      </motion.h1>
+      <motion.img
+        {...whileInViewAnimation}
+        src={STATIC_ROOT + `img/banner.png`}
+        className={styles.banner}
+      />
     </header>
   );
 }
@@ -47,6 +49,13 @@ interface ContentContainerProps {
   description?: ReactNode;
   padding?: boolean;
 }
+
+const whileInViewAnimation = {
+  initial: { opacity: 0 },
+  whileInView: { opacity: 1 },
+  viewport: { once: true },
+  transition: { duration: 0.8, ease: "easeInOut", delay: 0.3 },
+};
 
 const ContentContainer: FC<PropsWithChildren<ContentContainerProps>> = ({
   id,
@@ -66,7 +75,7 @@ const ContentContainer: FC<PropsWithChildren<ContentContainerProps>> = ({
       {hint && (
         <div className={styles.contentContainerHint}>
           <div className={styles.contentContainerHintLine} />
-          {hint}
+          <motion.span {...whileInViewAnimation}>{hint}</motion.span>
         </div>
       )}
       <div
@@ -74,12 +83,21 @@ const ContentContainer: FC<PropsWithChildren<ContentContainerProps>> = ({
       />
       {title &&
         createElement(
-          `h${level}`,
-          { id, className: styles[`h${level}`] },
+          motion[`h${level}`],
+          {
+            id,
+            className: styles[`h${level}`],
+            ...whileInViewAnimation,
+          },
           title
         )}
       {description && (
-        <p className={clsx(styles.p, styles[`p${level}`])}>{description}</p>
+        <motion.p
+          {...whileInViewAnimation}
+          className={clsx(styles.p, styles[`p${level}`])}
+        >
+          {description}
+        </motion.p>
       )}
       {children}
     </section>
@@ -88,10 +106,10 @@ const ContentContainer: FC<PropsWithChildren<ContentContainerProps>> = ({
 
 const RowContainer: FC<PropsWithChildren> = ({ children }) => {
   return (
-    <div className={styles.rowContainer}>
+    <motion.div {...whileInViewAnimation} className={styles.rowContainer}>
       <div className={styles.rowContainerDivider} />
       {children}
-    </div>
+    </motion.div>
   );
 };
 
@@ -102,9 +120,13 @@ function Introduction() {
       title={<Translate>Flappy</Translate>}
       hint={<Translate>banner</Translate>}
     >
-      <div className={styles.introductionSubtitle}>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        className={styles.introductionSubtitle}
+      >
         AI Agent DeveloperAI Agent DeveloperAI
-      </div>
+      </motion.div>
       <div className={styles.introductionContent}>
         <p className={styles.p}>
           <Translate>
@@ -146,31 +168,32 @@ function AboutUs() {
       }
     >
       <div className={styles.aboutUsMain}>
-        <img
+        <motion.img
           src={STATIC_ROOT + "img/about-us.png"}
           className={styles.aboutUsImg}
+          {...whileInViewAnimation}
         />
         <div className={styles.aboutUsContent}>
-          <p className={styles.p}>
+          <motion.p {...whileInViewAnimation} className={styles.p}>
             We're Pleisto, a technology company with a vision to "augment human
             intellect" 🧠 and foster a better world.
-          </p>
+          </motion.p>
           <p> </p>
-          <p className={styles.p}>
+          <motion.p {...whileInViewAnimation} className={styles.p}>
             We're thrilled to introduce two game-changing projects: Flappy
             Engine and Flappy. These innovative, open-source tools are designed
             to supercharge the industrial application of AI by harnessing the
             power of Large Language Models, such as GPT.
-          </p>
+          </motion.p>
           <p> </p>
-          <p className={styles.p}>
+          <motion.p {...whileInViewAnimation} className={styles.p}>
             Flappy, our Production-Ready LLM Agent SDK for Every Developer, is
             designed to bridge the gap between large language models and
             developers. It allows you to harness the power of AI, no matter your
             technical expertise or project complexity.
-          </p>
+          </motion.p>
           <p> </p>
-          <p className={styles.p}>
+          <motion.p {...whileInViewAnimation} className={styles.p}>
             Building on the foundation of Flappy, our Flappy Engine takes things
             a step further. It's a comprehensive AI Backend-as-a-Service (BaaS)
             that not only connects applications with underlying AI models, but
@@ -179,20 +202,23 @@ function AboutUs() {
             efficiency of your AI workflows. Furthermore, Flappy Engine employs
             smart caching and other acceleration techniques to ensure maximum
             performance.
-          </p>
+          </motion.p>
           <p> </p>
-          <p className={styles.p}>
+          <motion.p {...whileInViewAnimation} className={styles.p}>
             In the past, we embarked on an ambitious project called MashPod,
             formerly known as Brickdoc, an all-in-one workspace for remote
             teams. As we've evolved, our focus has shifted to the Yuren Engine.
             We're leveraging the insights gained from previous projects, along
             with our extensive experience in Semantic Web and knowledge graphs,
             to drive these new initiatives.
-          </p>
-          <a className={clsx(styles.button, styles.aboutUsBtn)}>
+          </motion.p>
+          <motion.a
+            {...whileInViewAnimation}
+            className={clsx(styles.button, styles.aboutUsBtn)}
+          >
             <ArrowRight className={styles.buttonIcon} />
             <Translate>Get Start</Translate>
-          </a>
+          </motion.a>
         </div>
       </div>
     </ContentContainer>
@@ -290,7 +316,10 @@ function AISolutions() {
         </Translate>
       ),
       content: (
-        <div className={styles.promptImgLayout}>
+        <motion.div
+          {...whileInViewAnimation}
+          className={styles.promptImgLayout}
+        >
           <img
             className={styles.promptImg}
             src={STATIC_ROOT + "img/mash-diffusion-prompt.png"}
@@ -313,7 +342,7 @@ function AISolutions() {
               <Translate>submit</Translate>
             </div>
           </div>
-        </div>
+        </motion.div>
       ),
     },
     {
@@ -386,7 +415,11 @@ function Blogs() {
     <ContentContainer id="blogs" level={2} title={<Translate>Blogs</Translate>}>
       <div className={styles.blogPreviewLayout}>
         {recentBlogs.map((blog) => (
-          <div className={styles.blogPreview} key={blog.id}>
+          <motion.div
+            {...whileInViewAnimation}
+            className={styles.blogPreview}
+            key={blog.id}
+          >
             <div className={styles.blogDate}>{blog.metadata.formattedDate}</div>
             <div className={styles.blogMain}>
               <div className={styles.blogTitle}>{blog.metadata.title}</div>
@@ -398,7 +431,7 @@ function Blogs() {
                 <Translate>Read More</Translate>
               </a>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </ContentContainer>
@@ -555,13 +588,15 @@ interface MemberDetailsPopoverProps {
 }
 
 const MemberDetailsPopover = ({ visible }: MemberDetailsPopoverProps) => {
-  return (
-    <div
-      className={clsx(styles.memberDetailsOverlay, {
-        [styles.visible]: visible,
-      })}
+  return visible ? (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ type: "tween" }}
+      className={clsx(styles.memberDetailsOverlay, {})}
     />
-  );
+  ) : null;
 };
 
 function MemberCard({ member }: { member: Member }) {
@@ -570,8 +605,15 @@ function MemberCard({ member }: { member: Member }) {
   const [active, setActive] = useState(false);
 
   return (
-    <div className={styles.memberItem}>
-      <div
+    <motion.div {...whileInViewAnimation} className={styles.memberItem}>
+      <motion.div
+        whileTap={{
+          scale: 1.2,
+        }}
+        whileHover={{
+          scale: 1.2,
+        }}
+        transition={{ type: "spring", stiffness: 100 }}
         className={clsx(styles.member, { [styles.active]: active })}
         onClick={() => {
           setActive(true);
@@ -599,11 +641,25 @@ function MemberCard({ member }: { member: Member }) {
         <div className={styles.memberDetails}>
           <div className={styles.memberName}>{member.name}</div>
           <div className={styles.memberPosition}>{member.position}</div>
-          {active && <div className={styles.memberExtra}>{member.details}</div>}
+          {active && (
+            <motion.div
+              initial={{ height: 0, overflow: "hidden" }}
+              animate={{
+                height: "auto",
+              }}
+              exit={{
+                maxHeight: 0,
+              }}
+              transition={{ delay: 0.1, duration: 0.3, ease: "easeInOut" }}
+              className={styles.memberExtra}
+            >
+              {member.details}
+            </motion.div>
+          )}
         </div>
-      </div>
+      </motion.div>
       <MemberDetailsPopover visible={active} />
-    </div>
+    </motion.div>
   );
 }
 
@@ -633,27 +689,33 @@ function Partners() {
       title={<Translate>Partners</Translate>}
     >
       <div className={styles.partnersLayout}>
-        <img
+        <motion.img
+          {...whileInViewAnimation}
           src={STATIC_ROOT + "img/partners/1.png"}
           className={styles.partnerImg}
         />
-        <img
+        <motion.img
+          {...whileInViewAnimation}
           src={STATIC_ROOT + "img/partners/2.png"}
           className={styles.partnerImg}
         />
-        <img
+        <motion.img
+          {...whileInViewAnimation}
           src={STATIC_ROOT + "img/partners/3.png"}
           className={styles.partnerImg}
         />
-        <img
+        <motion.img
+          {...whileInViewAnimation}
           src={STATIC_ROOT + "img/partners/4.png"}
           className={styles.partnerImg}
         />
-        <img
+        <motion.img
+          {...whileInViewAnimation}
           src={STATIC_ROOT + "img/partners/5.png"}
           className={styles.partnerImg}
         />
-        <img
+        <motion.img
+          {...whileInViewAnimation}
           src={STATIC_ROOT + "img/partners/6.png"}
           className={styles.partnerImg}
         />
@@ -669,14 +731,17 @@ function ContactUs() {
       level={2}
       title={<Translate>Contact Us</Translate>}
     >
-      <div className={styles.contactUsText}>
+      <motion.div {...whileInViewAnimation} className={styles.contactUsText}>
         Stay tuned for updates 📢 as we continue to innovate and move forward
         🚀.
-      </div>
-      <a className={clsx(styles.button, styles.primary)}>
+      </motion.div>
+      <motion.a
+        {...whileInViewAnimation}
+        className={clsx(styles.button, styles.primary)}
+      >
         <ArrowRight className={styles.buttonIcon} />
         <Translate>Get Start</Translate>
-      </a>
+      </motion.a>
     </ContentContainer>
   );
 }
@@ -688,7 +753,7 @@ function Footer() {
   return (
     <footer>
       <ContentContainer level={2}>
-        <div className={styles.footerLayout}>
+        <motion.div {...whileInViewAnimation} className={styles.footerLayout}>
           <div className={styles.companyInfo}>
             <img
               className={styles.footerLogo}
@@ -772,7 +837,7 @@ function Footer() {
               <img src={STATIC_ROOT + "/img/social-medias/github.png"} />
             </div>
           </div>
-        </div>
+        </motion.div>
       </ContentContainer>
     </footer>
   );

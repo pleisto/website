@@ -6,13 +6,13 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #929292;
-  --ifm-color-primary-dark: #5e5e5e;
-  --ifm-color-primary-darker: #424242;
-  --ifm-color-primary-darkest: #1c1c1e;
-  --ifm-color-primary-light: #d3d3d3;
-  --ifm-color-primary-lighter: #e0e0e0;
-  --ifm-color-primary-lightest: #f4f4f4;
+  --ifm-color-primary: rgb(146, 146, 146);
+  --ifm-color-primary-dark: rgb(94, 94, 94);
+  --ifm-color-primary-darker: rgb(66, 66, 66);
+  --ifm-color-primary-darkest: rgb(28, 28, 30);
+  --ifm-color-primary-light: rgb(211, 211, 211);
+  --ifm-color-primary-lighter: rgb(224, 224, 224);
+  --ifm-color-primary-lightest: rgb(244, 244, 244);
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --ifm-navbar-padding-vertical: 0;
@@ -44,6 +44,76 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 } */
+
+/*
+ * fonts
+ */
+
+@font-face {
+  font-family: 'Pleisto Sans';
+  src: url('https://public-blobs.pleistoapis.net/webfonts/PleistoSans/PleistoSans_Regular.eot');
+  src: url('https://public-blobs.pleistoapis.net/webfonts/PleistoSans/PleistoSans_Regular.woff2') format('woff2'),
+    url('https://public-blobs.pleistoapis.net/webfonts/PleistoSans/PleistoSans_Regular.woff') format('woff'),
+    url('https://public-blobs.pleistoapis.net/webfonts/PleistoSans/PleistoSans_Regular.ttf') format('truetype'),
+    url('https://public-blobs.pleistoapis.net/webfonts/PleistoSans/PleistoSans_Regular.svg') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pleisto Sans';
+  src: url('https://public-blobs.pleistoapis.net/webfonts/PleistoSans/PleistoSans_Medium.eot');
+  src: url('https://public-blobs.pleistoapis.net/webfonts/PleistoSans/PleistoSans_Medium.woff2') format('woff2'),
+    url('https://public-blobs.pleistoapis.net/webfonts/PleistoSans/PleistoSans_Medium.woff') format('woff'),
+    url('https://public-blobs.pleistoapis.net/webfonts/PleistoSans/PleistoSans_Medium.ttf') format('truetype'),
+    url('https://public-blobs.pleistoapis.net/webfonts/PleistoSans/PleistoSans_Medium.svg') format('svg');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pleisto Sans';
+  src: url('https://public-blobs.pleistoapis.net/webfonts/PleistoSans/PleistoSans_Bold.eot');
+  src: url('https://public-blobs.pleistoapis.net/webfonts/PleistoSans/PleistoSans_Bold.woff2') format('woff2'),
+    url('https://public-blobs.pleistoapis.net/webfonts/PleistoSans/PleistoSans_Bold.woff') format('woff'),
+    url('https://public-blobs.pleistoapis.net/webfonts/PleistoSans/PleistoSans_Bold.ttf') format('truetype'),
+    url('https://public-blobs.pleistoapis.net/webfonts/PleistoSans/PleistoSans_Bold.svg') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pleisto Sans';
+  src: url('https://public-blobs.pleistoapis.net/webfonts/PleistoSans/PleistoSans_Black.eot');
+  src: url('https://public-blobs.pleistoapis.net/webfonts/PleistoSans/PleistoSans_Black.woff2') format('woff2'),
+    url('https://public-blobs.pleistoapis.net/webfonts/PleistoSans/PleistoSans_Black.woff') format('woff'),
+    url('https://public-blobs.pleistoapis.net/webfonts/PleistoSans/PleistoSans_Black.ttf') format('truetype'),
+    url('https://public-blobs.pleistoapis.net/webfonts/PleistoSans/PleistoSans_Black.svg') format('svg');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pleisto Sans';
+  src: url('https://public-blobs.pleistoapis.net/webfonts/PleistoSans/PleistoSans_Light.eot');
+  src: url('https://public-blobs.pleistoapis.net/webfonts/PleistoSans/PleistoSans_Light.woff2') format('woff2'),
+    url('https://public-blobs.pleistoapis.net/webfonts/PleistoSans/PleistoSans_Light.woff') format('woff'),
+    url('https://public-blobs.pleistoapis.net/webfonts/PleistoSans/PleistoSans_Light.ttf') format('truetype'),
+    url('https://public-blobs.pleistoapis.net/webfonts/PleistoSans/PleistoSans_Light.svg') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pleisto Sans';
+  src: url('https://public-blobs.pleistoapis.net/webfonts/PleistoSans/PleistoSans_Thin.eot');
+  src: url('https://public-blobs.pleistoapis.net/webfonts/PleistoSans/PleistoSans_Thin.woff2') format('woff2'),
+    url('https://public-blobs.pleistoapis.net/webfonts/PleistoSans/PleistoSans_Thin.woff') format('woff'),
+    url('https://public-blobs.pleistoapis.net/webfonts/PleistoSans/PleistoSans_Thin.ttf') format('truetype'),
+    url('https://public-blobs.pleistoapis.net/webfonts/PleistoSans/PleistoSans_Thin.svg') format('svg');
+  font-weight: 100;
+  font-style: normal;
+}
 
 @font-face {
   font-family: 'Pleisto Sans CJK';
@@ -112,7 +182,7 @@
 }
 
 html {
-  font-family: 'Pleisto Sans CJK', 'Pingfang SC', 'Microsoft Yahei', -apple-system, BlinkMacSystemFont, 'Segoe UI', "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "Noto Sans Japanese", "ヒラギノ角ゴ Pro W3", "メイリオ", "Hiragino Kaku Gothic ProN", "MS PGothic", Osaka, sans-serif;
+  font-family: 'Pleisto Sans CJK', 'Pleisto Sans', 'Pingfang SC', 'Microsoft Yahei', -apple-system, BlinkMacSystemFont, 'Segoe UI', "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "Noto Sans Japanese", "ヒラギノ角ゴ Pro W3", "メイリオ", "Hiragino Kaku Gothic ProN", "MS PGothic", Osaka, sans-serif;
   max-width: 1440px;
   margin: auto;
 }
@@ -120,6 +190,10 @@ html {
 .footer {
   display: none;
 }
+
+/*
+ * navbar
+ */
 
 .navbar__logo {
   margin-right: 0;
@@ -150,14 +224,14 @@ html {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(66, 66, 66, 1);
+  border: 1px solid var(--ifm-color-primary-darker);
   padding: 0.4375rem 3.25rem;
   background: transparent;
   cursor: pointer;
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.375rem;
-  color: rgba(66, 66, 66, 1);
+  color: var(--ifm-color-primary-darker);
 }
 
 @media screen and (max-width: 996px) {
@@ -180,7 +254,7 @@ html {
 }
 
 .navbar__link__active {
-  color: rgba(66, 66, 66, 1);
+  color: var(--ifm-color-primary-darker);
   position: relative;
 }
 
@@ -191,7 +265,7 @@ html {
   top: var(--ifm-navbar-item-padding-vertical);
   left: var(--ifm-navbar-item-padding-horizontal);
   right: var(--ifm-navbar-item-padding-horizontal);
-  background: rgba(66, 66, 66, 1);
+  background: var(--ifm-color-primary-darker);
 }
 
 @media screen and (max-width: 996px) {
@@ -199,6 +273,10 @@ html {
     content: unset;
   }
 }
+
+/*
+ * dropdown
+ */
 
 .dropdown__menu {
   border: 1px solid rgba(94, 94, 94, 1);
@@ -221,13 +299,17 @@ html {
 
 .dropdown__link--active {
   background: none;
-  color: rgba(66, 66, 66, 1);
-  border-top: 1px solid rgba(66, 66, 66, 1);
+  color: var(--ifm-color-primary-darker);
+  border-top: 1px solid var(--ifm-color-primary-darker);
 }
+
+/*
+ * menu
+ */
 
 .menu__link--active:not(.menu__link--sublist) {
   background: none;
-  color: rgba(66, 66, 66, 1);
+  color: var(--ifm-color-primary-darker);
 }
 
 .menu__link,
@@ -235,11 +317,94 @@ html {
   border-radius: 0;
 }
 
+/*
+ * article
+ */
+
 article {
   color: rgba(146, 146, 146, 1);
 
 }
 
+article a {
+  text-decoration: underline;
+}
+
 article h2 a {
-  color: rgba(66, 66, 66, 1);
+  color: var(--ifm-color-primary-darker);
+  text-decoration: none;
+}
+
+article h1,
+h2,
+h3,
+h4,
+h5 {
+  color: var(--ifm-color-primary-darker);
+}
+
+/**
+ * container
+ */
+.container {
+  margin: unset;
+  max-width: unset;
+  width: unset;
+  padding: var(--ifm-navbar-item-padding-vertical) var(--ifm-navbar-padding-horizontal);
+}
+
+/**
+ * sidebar
+ */
+
+a.sidebarItemLink_node_modules-\@docusaurus-theme-classic-lib-theme-BlogSidebar-Desktop-styles-module {
+  color: rgba(146, 146, 146, 1);
+}
+
+a.sidebarItemLinkActive_node_modules-\@docusaurus-theme-classic-lib-theme-BlogSidebar-Desktop-styles-module {
+  color: var(--ifm-color-primary-darker) !important;
+}
+
+/*
+ * pagination
+ */
+
+.pagination-nav {
+  border-top: 1px solid rgba(189, 189, 189, 1);
+}
+
+.pagination-nav__link {
+  border: none;
+  margin-top: 0.625rem;
+  padding: 0;
+}
+
+.pagination-nav__label {
+  font-weight: 400;
+  color: var(--ifm-color-primary-darker);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.pagination-nav__label svg {
+  font-size: 1rem;
+}
+
+.pagination-nav__link--next .pagination-nav__label svg {
+  margin-left: 0.5rem;
+}
+
+.pagination-nav__link--prev .pagination-nav__label svg {
+  margin-right: 0.5rem;
+  transform: rotate(180deg);
+}
+
+.pagination-nav__link--next .pagination-nav__label::after {
+  content: unset;
+}
+
+.pagination-nav__link--prev .pagination-nav__label::before {
+  content: unset;
 }

@@ -50,6 +50,8 @@ const config: Config = {
       blogPlugin,
       {
         showReadingTime: false,
+        blogSidebarTitle: "All posts",
+        blogSidebarCount: "ALL",
       },
     ],
   ],
