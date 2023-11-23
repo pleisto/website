@@ -7,11 +7,12 @@ import useGlobalData from "@docusaurus/useGlobalData";
 import {
   FC,
   PropsWithChildren,
+  ReactHTML,
   ReactNode,
   createElement,
   useState,
 } from "react";
-import { motion } from "framer-motion";
+import { HTMLMotionProps, motion } from "framer-motion";
 import { ArrowRight } from "../components/icons/ArrowRight";
 import { BlogPost } from "@site/plugins/blog-plugin";
 import { Close } from "../components/icons/Close";
@@ -52,10 +53,10 @@ interface ContentContainerProps {
 }
 
 const whileInViewAnimation = {
-  initial: { opacity: 0 },
-  whileInView: { opacity: 1 },
+  initial: { opacity: 0, y: 20, x: 10 },
+  whileInView: { opacity: 1, y: 0, x: 0 },
   viewport: { once: true },
-  transition: { duration: 0.8, ease: "easeInOut", delay: 0.3 },
+  transition: { type: "tween", delayChildren: 0.3, delay: 0.3 },
 };
 
 const ContentContainer: FC<PropsWithChildren<ContentContainerProps>> = ({
