@@ -11,6 +11,7 @@ import NavbarMobileSidebarToggle from "@theme/Navbar/MobileSidebar/Toggle";
 import NavbarLogo from "@theme/Navbar/Logo";
 import NavbarSearch from "@theme/Navbar/Search";
 import styles from "./styles.module.css";
+import { useWindowSize } from "../useWindowSize";
 function useNavbarItems() {
   // TODO temporary casting until ThemeConfig type is improved
   return useThemeConfig().navbar.items;
@@ -45,6 +46,7 @@ function NavbarContentLayout({ left, right }) {
     </div>
   );
 }
+
 export default function NavbarContent() {
   const mobileSidebar = useNavbarMobileSidebar();
   const items = useNavbarItems();
@@ -54,20 +56,25 @@ export default function NavbarContent() {
     []
   );
   const searchBarItem = items.find((item) => item.type === "search");
+
+  const [windowSize] = useWindowSize();
+
   return (
     <NavbarContentLayout
       left={
         // TODO stop hardcoding items?
         <>
-          {!mobileSidebar.disabled && <NavbarMobileSidebarToggle />}
           <NavbarLogo />
-          <NavbarItems items={leftItems} />
+          <NavbarItems items={windowSize === "pad" ? [] : leftItems} />
         </>
       }
       right={
         // TODO stop hardcoding items?
         // Ask the user to add the respective navbar items => more flexible
         <>
+          {(!mobileSidebar.disabled || windowSize === "pad") && (
+            <NavbarMobileSidebarToggle />
+          )}
           <NavbarItems items={finalRightItems} />
           <NavbarColorModeToggle className={styles.colorModeToggle} />
           {!searchBarItem && (

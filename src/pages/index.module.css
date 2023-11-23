@@ -82,8 +82,8 @@ span.light {
   }
 
   .p2 {
-    font-size: 0.75rem;
-    line-height: 1.25rem;
+    font-size: 1.0625rem;
+    line-height: 1.4375rem;
   }
 }
 
@@ -99,12 +99,15 @@ span.light {
   font-weight: 400;
   line-height: 1.375rem;
   color: var(--ifm-color-primary-darker);
-
+  transition: ease-in-out 300ms all;
 }
 
-.button.primary {
-  background: var(--ifm-color-primary-darker);
+.button:hover,
+.button:active,
+.button:focus,
+.button:focus-visible {
   color: #fff;
+  background: var(--ifm-color-primary-darker);
 }
 
 @media screen and (max-width: 996px) {
@@ -123,7 +126,7 @@ span.light {
 
 .toc {
   position: sticky;
-  top: 0;
+  top: calc(var(--ifm-navbar-height) + 1.5rem);
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -388,6 +391,7 @@ span.light {
 }
 
 .promptImg {
+  max-width: 100%;
   width: 48.25rem;
 }
 
@@ -433,10 +437,14 @@ span.light {
   color: var(--ifm-color-primary-darker);
 }
 
-@media screen and (max-width: 996px) {
+@media screen and (max-width: 400px) {
   .promptImgLayout {
     position: relative;
     height: 21.3125rem;
+  }
+
+  .promptImg {
+    width: 100%;
   }
 
   .promptForm {
@@ -583,6 +591,14 @@ a.blogLink:hover {
   margin-top: 2.5rem;
 }
 
+@media screen and (max-width: 1364px) {
+  .members {
+    grid-template-columns: repeat(3, 1fr);
+    gap: unset;
+    margin-top: 1.25rem;
+  }
+}
+
 @media screen and (max-width: 996px) {
   .members {
     grid-template-columns: repeat(2, 1fr);
@@ -597,7 +613,7 @@ a.blogLink:hover {
   height: 20.875rem;
 }
 
-@media screen and (max-width: 996px) {
+@media screen and (max-width: 1364px) {
   .memberItem {
     height: 15rem;
   }
@@ -608,7 +624,7 @@ a.blogLink:hover {
   border: 1px solid transparent;
 }
 
-@media screen and (max-width: 996px) {
+@media screen and (max-width: 1364px) {
   .member {
     padding: 0.625rem;
   }
@@ -647,7 +663,7 @@ a.blogLink:hover {
   cursor: pointer;
 }
 
-@media screen and (max-width: 996px) {
+@media screen and (max-width: 1364px) {
   .memberClose {
     font-size: 1.25rem;
     top: 0.625rem;
@@ -661,7 +677,7 @@ a.blogLink:hover {
   height: 13.25rem;
 }
 
-@media screen and (max-width: 996px) {
+@media screen and (max-width: 1364px) {
   .memberAvatar {
     width: 8.8125rem;
     height: 8.8125rem;
@@ -672,7 +688,7 @@ a.blogLink:hover {
   margin-top: 1.25rem;
 }
 
-@media screen and (max-width: 996px) {
+@media screen and (max-width: 1364px) {
   .memberDetails {
     margin-top: 1.25rem;
   }
@@ -685,7 +701,7 @@ a.blogLink:hover {
   color: var(--ifm-color-primary-darker);
 }
 
-@media screen and (max-width: 996px) {
+@media screen and (max-width: 1364px) {
   .memberName {
     font-size: 1.5rem;
     line-height: 2rem;
@@ -700,7 +716,7 @@ a.blogLink:hover {
   text-wrap: nowrap;
 }
 
-@media screen and (max-width: 996px) {
+@media screen and (max-width: 1364px) {
   .memberPosition {
     font-size: 1rem;
     line-height: 1.5rem;
@@ -717,7 +733,7 @@ a.blogLink:hover {
   border-top: 1px solid rgba(189, 189, 189, 1);
 }
 
-@media screen and (max-width: 996px) {
+@media screen and (max-width: 1364px) {
   .memberExtra {
     margin-top: 0.625rem;
     font-size: 0.625rem;
@@ -753,7 +769,7 @@ a.blogLink:hover {
   margin-top: 2.5rem;
 }
 
-@media screen and (max-width: 996px) {
+@media screen and (max-width: 1364px) {
   .partnersLayout {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.375rem;

@@ -24,6 +24,7 @@
   --ifm-heading-margin-top: 0;
   --ifm-heading-margin-bottom: 0;
   --ifm-menu-color: rgba(146, 146, 146, 1);
+  --ifm-link-hover-color: rgb(146, 146, 146);
 }
 
 @media screen and (max-width: 996px) {
@@ -209,6 +210,13 @@ html {
  * navbar
  */
 
+@media screen and (max-width: 1364px) {
+  .navbar__toggle {
+    display: inherit;
+    margin-right: 0;
+  }
+}
+
 .navbar__logo {
   margin-right: 0;
 }
@@ -226,8 +234,14 @@ html {
 
 .navbar__item.dropdown {
   padding: 1rem;
-  display: inline-block;
+  display: inline-flex;
   white-space: nowrap;
+}
+
+@media screen and (max-width: 1364px) {
+  .navbar__item.dropdown {
+    padding: 0.625rem;
+  }
 }
 
 .navbar__button {
@@ -242,6 +256,15 @@ html {
   font-weight: 400;
   line-height: 1.375rem;
   color: var(--ifm-color-primary-darker);
+  transition: ease-in-out 150ms all;
+}
+
+.navbar__button:hover,
+.navbar__button:focus-visible,
+.navbar__button:focus,
+.navbar__button:active {
+  color: #fff;
+  background: var(--ifm-color-primary-darker);
 }
 
 @media screen and (max-width: 996px) {
@@ -296,6 +319,7 @@ html {
 }
 
 .dropdown--right .dropdown__menu {
+  top: calc(100% - var(--ifm-navbar-item-padding-vertical) + 1rem);
   right: 0.5rem;
 }
 
@@ -404,10 +428,12 @@ a.sidebarItemLinkActive_node_modules-\@docusaurus-theme-classic-lib-theme-BlogSi
 
 .pagination-nav__link--next .pagination-nav__label svg {
   margin-left: 0.5rem;
+  margin-right: -0.44rem;
 }
 
 .pagination-nav__link--prev .pagination-nav__label svg {
   margin-right: 0.5rem;
+  margin-left: -0.44rem;
   transform: rotate(180deg);
 }
 

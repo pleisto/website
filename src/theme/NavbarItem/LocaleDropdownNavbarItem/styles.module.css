@@ -1,4 +1,18 @@
 .iconLanguage {
   vertical-align: text-bottom;
-  margin-right: 5px;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  color: var(--ifm-color-primary-darker);
+  margin-right: 1.25rem;
+  margin-top: 2px;
+}
+
+@media screen and (max-width: 1364px) {
+  .iconLanguage {
+    margin-right: 0;
+  }
+}
+
+.localeDropdown::after {
+  content: unset !important;
 }

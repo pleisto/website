@@ -740,10 +740,7 @@ function ContactUs() {
         Stay tuned for updates 📢 as we continue to innovate and move forward
         🚀.
       </motion.div>
-      <motion.a
-        {...whileInViewAnimation}
-        className={clsx(styles.button, styles.primary)}
-      >
+      <motion.a {...whileInViewAnimation} className={styles.button}>
         <ArrowRight className={styles.buttonIcon} />
         <Translate>Get Start</Translate>
       </motion.a>
