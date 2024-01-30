@@ -3,7 +3,6 @@ import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 import blogPlugin from "./plugins/blog-plugin";
 
-const baseUrl = "/website";
 
 const config: Config = {
   title: "Pleisto",
@@ -11,10 +10,10 @@ const config: Config = {
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: "https://pleisto.github.io",
+  url: "https://pleisto.com",
+  baseUrl: "/",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl,
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -29,7 +28,11 @@ const config: Config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: "en",
-    locales: ["en", "ja", "zh-Hans"],
+    locales: [
+      "en",
+      // "ja", 
+      //"zh-Hans"
+    ],
   },
 
   presets: [
@@ -72,37 +75,37 @@ const config: Config = {
           to: "/#about-us",
           label: "About Us",
           position: "left",
-          activeBasePath: baseUrl + "/#about-us",
+          activeBasePath: "/#about-us",
         },
         {
           to: "/#ai-solutions",
-          label: "AI Solutions",
+          label: "Products & Services",
           position: "left",
-          activeBasePath: baseUrl + "/#ai-solutions",
+          activeBasePath: "/#ai-solutions",
         },
-        {
-          to: "/blog",
-          label: "Blogs",
-          position: "left",
-          activeBaseRegex: baseUrl + "/blog/*",
-        },
+        // {
+        //   to: "/blog",
+        //   label: "Blogs",
+        //   position: "left",
+        //   activeBaseRegex: "/blog/*",
+        // },
         {
           to: "/#core-members",
           label: "Core Members",
           position: "left",
-          activeBasePath: baseUrl + "/#core-members",
+          activeBasePath: "/#core-members",
         },
         {
           to: "/#partners",
           label: "Partner",
           position: "left",
-          activeBasePath: baseUrl + "/#partners",
+          activeBasePath: "/#partners",
         },
         {
           to: "/#contact-us",
           label: "Contact us",
           position: "left",
-          activeBasePath: baseUrl + "/#contact-us",
+          activeBasePath: "/#contact-us",
         },
         {
           type: "localeDropdown",

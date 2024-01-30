@@ -52,7 +52,9 @@ export default function NavbarContent() {
   const items = useNavbarItems();
   const [leftItems, rightItems] = splitNavbarItems(items);
   const finalRightItems = useMemo(
-    () => [...rightItems, { type: "button", label: "Join Us" }],
+    () => [...rightItems,
+      //{ type: "button", label: "Join Us" }
+    ],
     []
   );
   const searchBarItem = items.find((item) => item.type === "search");
@@ -75,7 +77,7 @@ export default function NavbarContent() {
           {(!mobileSidebar.disabled || windowSize === "pad") && (
             <NavbarMobileSidebarToggle />
           )}
-          <NavbarItems items={finalRightItems} />
+          {/* <NavbarItems items={finalRightItems} /> */}
           <NavbarColorModeToggle className={styles.colorModeToggle} />
           {!searchBarItem && (
             <NavbarSearch>

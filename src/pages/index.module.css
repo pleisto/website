@@ -8,14 +8,18 @@
  * global styles
  */
 
-span.light {
+span.light,h1.light {
   color: var(--ifm-color-primary);
+}
+
+span.bio {
+  color:  var(--ifm-color-primary-darker);
 }
 
 .h1 {
   font-size: 5rem;
   font-weight: 300;
-  line-height: 6.25rem;
+  line-height: 4.5rem;
   color: var(--ifm-color-primary-darker);
   margin: var(--page-gap) 0 2.5rem;
 }
