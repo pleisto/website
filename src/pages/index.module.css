@@ -17,9 +17,9 @@ span.bio {
 }
 
 .h1 {
-  font-size: 5rem;
+  font-size: 4.75rem;
   font-weight: 300;
-  line-height: 4.5rem;
+  line-height: 4.55rem;
   color: var(--ifm-color-primary-darker);
   margin: var(--page-gap) 0 2.5rem;
 }
@@ -783,16 +783,11 @@ a.blogLink:hover {
 }
 
 .partnerImg {
-  width: 10.75rem;
-  align-self: center;
-  justify-self: center;
+  width: 220px;
+  max-width: unset;
 }
 
-@media screen and (max-width: 996px) {
-  .partnerImg {
-    width: 5.625rem;
-  }
-}
+
 
 
 /**
